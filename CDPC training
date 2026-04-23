@@ -1,0 +1,170 @@
+# 1. Peterson Number (example logic)
+n = int(input("Enter number: "))
+temp = n
+sum_fact = 0
+
+def fact(x):
+    f = 1
+    for i in range(1, x + 1):
+        f *= i
+    return f
+
+while n > 0:
+    rem = n % 10
+    sum_fact += fact(rem)
+    n //= 10
+
+if sum_fact == temp:
+    print("Peterson Number")
+else:
+    print("Not Peterson")
+
+# 2. Sum of digits
+n = int(input("Enter number: "))
+sum_digits = 0
+
+while n > 0:
+    rem = n % 10
+    sum_digits += rem
+    n //= 10
+
+print("Sum:", sum_digits)
+
+# 3. Reverse a number
+n = int(input("Enter number: "))
+rev = 0
+
+while n > 0:
+    rem = n % 10
+    rev = rev * 10 + rem
+    n //= 10
+
+print("Reverse:", rev)
+
+# 4. Count digits
+n = int(input("Enter number: "))
+count = 0
+
+while n > 0:
+    n //= 10
+    count += 1
+
+print("Digits:", count)
+
+# 5. Palindrome check
+n = int(input("Enter number: "))
+temp = n
+rev = 0
+
+while n > 0:
+    rem = n % 10
+    rev = rev * 10 + rem
+    n //= 10
+
+if temp == rev:
+    print("Palindrome")
+else:
+    print("Not Palindrome")
+
+# 6. Armstrong Number
+n = int(input("Enter number: "))
+temp = n
+sum_val = 0
+digits = len(str(n))
+
+while n > 0:
+    rem = n % 10
+    sum_val += rem ** digits
+    n //= 10
+
+if sum_val == temp:
+    print("Armstrong")
+else:
+    print("Not Armstrong")
+
+# 7. Armstrong numbers from 1 to 10000
+for i in range(1, 10001):
+    temp = i
+    digits = len(str(i))
+    sum_val = 0
+
+    while temp > 0:
+        rem = temp % 10
+        sum_val += rem ** digits
+        temp //= 10
+
+    if sum_val == i:
+        print(i)
+
+# 8. Even or Odd
+n = int(input("Enter number: "))
+
+if n % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+
+# 9. Sum, Difference, Product
+a = int(input("Enter a: "))
+b = int(input("Enter b: "))
+
+print("Sum:", a + b)
+print("Difference:", a - b)
+print("Product:", a * b)
+
+# 10. Division
+a = int(input("Enter a: "))
+b = int(input("Enter b: "))
+
+print("Integer Division:", a // b)
+print("Float Division:", a / b)
+
+# 12. Function (addition)
+def add(a, b):
+    return a + b
+
+a = int(input("Enter a: "))
+b = int(input("Enter b: "))
+
+print("Result:", add(a, b))
+
+# 13. Sum of array
+def array_sum(arr):
+    total = 0
+    for num in arr:
+        total += num
+    return total
+
+arr = [1, 2, 3, 4, 5]
+print("Sum:", array_sum(arr))
+
+# 14. Find max of 4 numbers
+n1 = int(input())
+n2 = int(input())
+n3 = int(input())
+n4 = int(input())
+
+max_val = n1
+
+if n2 > max_val:
+    max_val = n2
+if n3 > max_val:
+    max_val = n3
+if n4 > max_val:
+    max_val = n4
+
+print("Max:", max_val)
+
+# 15. Staircase pattern
+n = int(input("Enter n: "))
+
+for i in range(1, n + 1):
+    print(" " * (n - i) + "#" * i)
+
+# Input
+N = int(input())
+S = input()
+
+# Output
+print(N * 2)
+print(S)
